@@ -2,10 +2,10 @@
 
     npm install
 
-# Build
+# Build(use webpack)
 
-    npm build
+    npm run build
 
-# Test
+# Test(use webpack server)
 
-    npm test
+    npm run test
