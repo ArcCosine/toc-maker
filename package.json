@@ -1,0 +1,22 @@
+{
+  "name": "toc-maker",
+  "version": "1.0.0",
+  "description": "Create automatoly table of contents\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[CAutomatically generate a table of contents from HTML documents.",
+  "main": "toc-maker.js",
+  "scripts": {
+    "build" : "webpack",
+    "test" : "webpack-dev-server"
+  },
+  "keywords": [
+    "JavaScript"
+  ],
+  "author": "Arc Cosine",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "webpack": "^3.7.1",
+    "webpack-dev-server": "^2.9.1"
+  }
+}
