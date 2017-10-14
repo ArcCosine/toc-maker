@@ -1,7 +1,7 @@
 {
   "name": "toc-maker",
   "version": "1.0.0",
-  "description": "Create automatoly table of contents\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[CAutomatically generate a table of contents from HTML documents.",
+  "description": "Automatically generate a table of contents from HTML documents.",
   "main": "toc-maker.js",
   "scripts": {
     "build" : "webpack",
