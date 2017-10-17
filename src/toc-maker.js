@@ -87,7 +87,7 @@
         if( option.toggleOpen ){
             ul.classList.add("__toc__open");
         }
-        let beforelevel = 1;
+        let beforelevel = option.startLevel || 1;
         const renderer = (data) => {
             if( data.level !== beforelevel ){
                 const diff = data.level - beforelevel;
