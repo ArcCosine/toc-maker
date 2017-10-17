@@ -1,14 +1,15 @@
 const path = require("path");
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 
 const config = {
     entry: {
         "app" : "./src/toc-maker.js"
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, "dist"),
         filename : "tocm.js"
     },
+    devtool: "inline-source-map",
     module: {
         rules: [{
             test: /\.js$/,
