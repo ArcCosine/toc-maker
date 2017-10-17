@@ -74,21 +74,38 @@
     var init = function init() {
         var toc = document.getElementById("toc");
         if (toc) {
-            console.log("OK");
+            console.log("test");
             buildToc(toc);
         }
     };
     var buildToc = function buildToc(element) {
-        var headers = document.querySelectorAll("h2");
+        var headers = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        var tocDatas = [];
+        var id = 0;
 
-        var fragment = document.createDocumentFragment();
-        var ul = fragment.appendChild(document.createElement("ul"));
-        Array.prototype.forEach.call(headers, function (elem, index, array) {
-            var li = ul.appendChild(document.createElement("li"));
-            li.appendChild(document.createTextNode(elem.textContent));
-        });
-        element.appendChild(fragment);
+        var createArray = function createArray(elem, index, array) {
+            tocDatas.push({
+                level: parseInt(elem.tagName.replace(/h/, ""), 10),
+                id: id
+            });
+            id++;
+        };
+        Array.prototype.forEach.call(headers, createArray);
+
+        //const fragment = document.createDocumentFragment();
+
+        var renderer = function renderer(data, index, array) {
+            console.log(data);
+            //const ul = fragment.appendChild(document.createElement("ul"));
+            //const li = ul.appendChild(document.createElement("li"));
+            //li.appendChild(document.createTextNode(elem.textContent));
+        };
+        Array.prototype.forEach.call(tocDatas, renderer);
+        //element.appendChild(fragment);
     };
+
+    var timer = void 0;
+
     var domCheck = function domCheck() {
         var toc = document.getElementById("toc");
         if (toc) {
@@ -98,7 +115,11 @@
         }
     };
 
-    var timer = window.setInterval(domCheck, 100);
+    var load = function load() {
+        timer = window.setInterval(domCheck, 100);
+    };
+
+    document.addEventListener("DOMContentLoaded", load, false);
 })();
 
 /***/ })

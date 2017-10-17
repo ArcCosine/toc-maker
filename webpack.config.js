@@ -1,7 +1,9 @@
 const path = require("path");
 
 const config = {
-    entry: "./src/toc-maker.js",
+    entry: {
+        "app" : "./src/toc-maker.js"
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename : "tocm.js"

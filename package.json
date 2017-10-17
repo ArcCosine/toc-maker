@@ -5,7 +5,7 @@
   "main": "toc-maker.js",
   "scripts": {
     "build" : "webpack",
-    "test" : "webpack-dev-server"
+    "test" : "webpack-dev-server --content-base dist/"
   },
   "keywords": [
     "JavaScript"
