@@ -24,19 +24,17 @@
         Array.prototype.forEach.call( headers, createArray);
 
         const fragment = document.createDocumentFragment();
-        let ul, beforelevel = 0;
+        let ul = fragment.appendChild(document.createElement("ul")), beforelevel = 1;
         const renderer = (data, index, array) => {
-            //console.log(data);
             if( data.level !== beforelevel ){
-                let diff = data.level - beforelevel;
-                if( diff > 0 || data.level === 1){
-                    const appedLevel = (data.level === 1) ? fragment :  ul;
-                    ul = appedLevel.appendChild(document.createElement("ul"));
+                const diff = data.level - beforelevel;
+                if( diff > 0 ){
+                    // next level
+                    ul = ul.appendChild(document.createElement("ul"));
                 } else {
-                    // return previous level
-                    while(diff == -1){
+                    // previous level
+                    for( let i=diff; i < 0; i++){
                         ul = ul.parentNode;
-                        diff--;
                     }
                 }
             }
