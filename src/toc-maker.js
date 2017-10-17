@@ -76,7 +76,7 @@
                 container.classList.toggle("__toc__open");
                 setTimeout( () => {
                     toggleLink.textContent = container.classList.contains("__toc__open") ?  closeLabel : openLabel;
-                }, 800 );
+                }, 500 );
             };
             const toggle = ce(fragment,"span");
             const toggleLink = ce(toggle,"a", option.toggleOpen ? closeLabel : openLabel);
