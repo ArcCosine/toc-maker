@@ -3,7 +3,6 @@
     *  TOC Maker
     *  Author: Arc Cosine
     *  Since: 2017.10.18
-    *
     */
 
     //useful func
