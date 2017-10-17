@@ -1,8 +1,29 @@
 (()=>{
+<<<<<<< HEAD
     const init = ()=>{
         const toc = document.getElementById("toc");
         if( toc ){
             buildToc(toc);
+=======
+
+    //useful func
+    const ce = (node,tag,text) => {
+        const elem = node.appendChild(document.createElement(tag));
+        if( typeof text !== "undefined" ){
+            elem.appendChild(document.createTextNode(text));
+        }
+        return elem;
+    };
+
+
+    // append css
+    const appendCSS = () => {
+        const cssText = `
+        .__toc__ul {
+            max-height:0;
+            overflow: hidden;
+            transition: max-height .8s linear;
+>>>>>>> 907ea67... Update.
         }
     };
     const buildToc = (element)=> {
