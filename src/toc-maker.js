@@ -74,9 +74,7 @@
             const toggleEvent = () => {
                 const container = toggle.parentNode.querySelector("ul");
                 container.classList.toggle("__toc__open");
-                setTimeout( () => {
-                    toggleLink.textContent = container.classList.contains("__toc__open") ?  closeLabel : openLabel;
-                }, 500 );
+                toggleLink.textContent = container.classList.contains("__toc__open") ?  closeLabel : openLabel;
             };
             const toggle = ce(fragment,"span");
             const toggleLink = ce(toggle,"a", option.toggleOpen ? closeLabel : openLabel);
