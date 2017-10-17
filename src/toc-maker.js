@@ -1,4 +1,10 @@
 (()=>{
+    /*
+    *  TOC Maker
+    *  Author: Arc Cosine
+    *  Since: 2017.10.18
+    *
+    */
 
     //useful func
     const ce = (node,tag,text) => {
@@ -106,6 +112,7 @@
         return fragment;
     };
 
+    // TODO: more good design:)
     let timer;
     const domCheck = ()=> {
         if( timer ){
