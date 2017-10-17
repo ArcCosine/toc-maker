@@ -35,7 +35,8 @@
 
     //build table of contents
     const buildTocData = (element, option) => {
-        const headers = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        const baseNode = typeof option.baseNode !== "undefined" ? document.querySelector(option.baseNode) : document;
+        const headers = baseNode.querySelectorAll("h1,h2,h3,h4,h5,h6");
         let tocDatas = [];
         let id = 0;
 
