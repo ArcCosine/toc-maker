@@ -3,13 +3,18 @@ const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 
 const config = {
     entry: {
-        "app" : "./src/toc-maker.js"
+        "app" :path.join(__dirname, "src/loader.js")
     },
     output: {
         path: path.resolve(__dirname, "dist"),
         filename : "tocm.js"
     },
-    devtool: "inline-source-map",
+    devtool: "cheap-module-eval-source-map",
+    devServer: {
+        contentBase: "dist",
+        port: 8080,
+        inline: true
+    },
     module: {
         rules: [{
             test: /\.js$/,
@@ -17,6 +22,7 @@ const config = {
             use: {
                 loader: "babel-loader",
                 options: {
+                    sourceMap: true,
                     presets: ["es2015"]
                 }
             }

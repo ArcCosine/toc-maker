@@ -8,7 +8,9 @@
 
 # develop(use webpack server)
 
-    npm run test
+    npm run dev 
+
+and access to [http://localhost:8080/debug.html](http://localhost:8080/debug.html)
 
 # Usage 
 
