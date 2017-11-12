@@ -19,9 +19,9 @@ const renderTocElement = (datas, option)=> {
             toggleLink.textContent = container.classList.contains("__toc__open") ?  closeLabel : openLabel;
         };
         const toggle = ce(fragment,"span");
-        const toggleLink = ce(toggle,"a", option.toggleOpen ? closeLabel : openLabel);
-        toggleLink.href = "#";
+        const toggleLink = ce(toggle,"span", option.toggleOpen ? closeLabel : openLabel);
         toggleLink.addEventListener("click", toggleEvent, false);
+        toggleLink.classList.add("__toc__toggle");
     }
     let ul = ce(fragment,"ul");
     ul.classList.add("__toc__ul");
