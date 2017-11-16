@@ -14,7 +14,7 @@ const appendCSS = () => {
             transition: max-height .8s linear;
         }
         .__toc__open {
-            max-height: 200em;
+            max-height: 300em;
             height: auto;
         }`;
     const header = document.querySelector("head");
