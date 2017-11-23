@@ -3,7 +3,7 @@ const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 
 const config = {
     entry: {
-        "app" :path.join(__dirname, "src/loader.js")
+        "app" :path.join(__dirname, "src/js/loader.js")
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -16,17 +16,29 @@ const config = {
         inline: true
     },
     module: {
-        rules: [{
-            test: /\.js$/,
-            exclude: /node_modules/,
-            use: {
-                loader: "babel-loader",
-                options: {
-                    sourceMap: true,
-                    presets: ["es2015"]
+        rules: [
+            {
+                test: /\.less$/,
+                exclude: /node_modules/,
+                use: [{
+                    loader: "style-loader"
+                },{
+                    loader: "css-loader"
+                },{
+                    loader: "less-loader"
+                }]
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        sourceMap: true,
+                        presets: ["es2015"]
+                    }
                 }
-            }
-        }]
+            }]
     },
     plugins: [
         new UglifyJSPlugin()

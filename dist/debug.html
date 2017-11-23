@@ -4,13 +4,20 @@
   <meta charset="UTF-8">
   <title>debug</title>
   <style>
+    .contents {
+      width: 980px;
+      background: #fcfcfc;
+      margin: 0px auto;
+    }
     p {
+      padding: 0em 1em;
       word-wrap: break-word;
     }
   </style>
   <script src="tocm.js" charset="UTF-8"></script>
 </head>
 <body>
+  <div class="contents">
   <div id="toc2"></div>
   <h1>header</h1>
   <p>debugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebug</p>
@@ -52,18 +59,33 @@
   <p>debugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebugdebug</p>
 </div>
   <script type="text/javascript">
-window._tocMakerParam = {
-  //baseNode: ".article-body-inner",
-  startLevel: 1,
-  id: "#toc2",
-  title: true,
-  titleLabel: "目次",
-  toggle: true,
-  toggleOpen: true,
-  toggleLabelOpen: "[開く]",
-  toggleLabelClose: "[閉じる]"
-};
+// English sample
+    window._tocMakerParam = {
+      baseNode: "body",
+      id: "#toc2",
+      title: true,
+      titleLabel: "Table of Contents",
+      toggle: true,
+      toggleOpen: true,
+      toggleLabelOpen: "[Open]",
+      toggleLabelClose: "[Close]"
+    };
+
+// Japanese sample
+//window._tocMakerParam = {
+//  baseNode: "body",
+//  startLevel: 1,
+//  id: "#toc2",
+//  title: true,
+//  titleLabel: "目次",
+//  toggle: true,
+//  toggleOpen: true,
+//  toggleLabelOpen: "[開く]",
+//  toggleLabelClose: "[閉じる]"
+//};
   </script>
+
+  </div>
 </body>
 </html>
 
