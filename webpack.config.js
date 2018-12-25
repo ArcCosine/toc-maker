@@ -1,5 +1,5 @@
 const path = require("path");
-const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 const config = {
     entry: {
@@ -40,9 +40,9 @@ const config = {
                 }
             }]
     },
-    plugins: [
-        new UglifyJSPlugin()
-    ]
+    optimization: {
+        minimizer: [new UglifyJsPlugin()]
+    }
 };
 
 module.exports = config;
