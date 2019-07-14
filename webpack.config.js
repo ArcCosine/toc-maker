@@ -1,7 +1,8 @@
 const path = require("path");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const TerserPlugin = require('terser-webpack-plugin');
 
 const config = {
+    mode: 'production',
     entry: {
         "app" :path.join(__dirname, "src/js/loader.js")
     },
@@ -35,13 +36,13 @@ const config = {
                     loader: "babel-loader",
                     options: {
                         sourceMap: true,
-                        presets: ["es2015"]
+                        presets: ["@babel/env"]
                     }
                 }
             }]
     },
     optimization: {
-        minimizer: [new UglifyJsPlugin()]
+        minimizer: [new TerserPlugin()]
     }
 };
 
