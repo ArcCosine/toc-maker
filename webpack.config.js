@@ -4,7 +4,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const config = {
     mode: 'production',
     entry: {
-        "app" :path.join(__dirname, "src/js/loader.js")
+        "app" :path.join(__dirname, "src/js/main.js")
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -19,14 +19,14 @@ const config = {
     module: {
         rules: [
             {
-                test: /\.less$/,
+                test: /\.scss$/,
                 exclude: /node_modules/,
                 use: [{
                     loader: "style-loader"
                 },{
                     loader: "css-loader"
                 },{
-                    loader: "less-loader"
+                    loader: "sass-loader"
                 }]
             },
             {

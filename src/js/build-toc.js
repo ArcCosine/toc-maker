@@ -1,4 +1,3 @@
-import "../less/toc-maker.less";
 import renderToc from "./render-toc.js";
 
 //build table of contents
