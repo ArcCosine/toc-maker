@@ -1,7 +1,7 @@
-import { ce  } from "./ce.js";
+import ce from "./ce.js";
 
 // render TOC
-const renderTocElement = (datas, option)=> {
+const renderToc = (datas, option)=> {
     option.toggleOpen = option.toggleOpen || false;
     const fragment = document.createDocumentFragment();
 
@@ -34,12 +34,10 @@ const renderTocElement = (datas, option)=> {
             const diff = data.level - beforelevel;
             if( diff > 0 ){
                 // next level
-                // TODO: more good design
                 ul = ce(ul,"ul");
             } else {
                 // same level or previous level
                 // If same level doesn't move previous level.
-                // TODO: more good design
                 for( let i=diff; i < 0; i++){
                     ul = ul.parentNode;
                 }
@@ -51,8 +49,8 @@ const renderTocElement = (datas, option)=> {
 
         beforelevel = data.level;
     };
-    datas.forEach(renderer);
+    datas.map(renderer);
     return fragment;
 };
 
-export { renderTocElement };
+export default renderToc;

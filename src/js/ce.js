@@ -7,4 +7,4 @@ const ce = (node,tag,text) => {
     return elem;
 };
 
-export { ce };
+export default ce;
