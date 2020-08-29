@@ -10,7 +10,7 @@ const config = {
         path: path.resolve(__dirname, "dist"),
         filename : "tocm.js"
     },
-    devtool: "cheap-module-eval-source-map",
+    devtool: "eval-cheap-module-source-map",
     devServer: {
         contentBase: "dist",
         port: 8080,
