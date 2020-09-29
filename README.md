@@ -1,6 +1,6 @@
 # Usage 
 
-    <script src="https://pathologist-leonard-26086.netlify.com/tocm.js" charset="UTF-8"></script>
+    <script src="https://pathologist-leonard-26086.netlify.app/tocm.js" charset="UTF-8"></script>
     <script type="text/javascript">
     window._tocMakerParam = {
       baseNode: "body",
