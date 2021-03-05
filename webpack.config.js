@@ -1,34 +1,39 @@
 const path = require("path");
-const TerserPlugin = require('terser-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const config = {
-    mode: 'production',
+    mode: "production",
     entry: {
-        "app" :path.join(__dirname, "src/js/main.js")
+        app: "./src/js/main.js",
     },
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename : "tocm.js"
+        filename: "tocm.js",
     },
     devtool: "eval-cheap-module-source-map",
     devServer: {
         contentBase: "dist",
         port: 8080,
-        inline: true
+        inline: true,
     },
     module: {
         rules: [
             {
                 test: /\.scss$/,
                 exclude: /node_modules/,
-                use: [{
-                    loader: "style-loader"
-                },{
-                    loader: "css-loader"
-                },{
-                    loader: "sass-loader"
-                }]
+                use: [
+                    "style-loader",
+                    {
+                        loader: "css-loader",
+                        options: {
+                            url: false,
+                        },
+                    },
+                    {
+                        loader: "sass-loader",
+                    },
+                ],
             },
             {
                 test: /\.js$/,
@@ -36,28 +41,28 @@ const config = {
                 use: {
                     loader: "babel-loader",
                     options: {
-                        sourceMap: true,
-                        presets: ["@babel/env"]
-                    }
-                }
-            }]
+                        presets: ["@babel/preset-env"],
+                    },
+                },
+            },
+        ],
     },
     optimization: {
-        minimizer: [new TerserPlugin()]
+        minimizer: [new TerserPlugin()],
     },
-    plugins:[
+    plugins: [
         new CopyWebpackPlugin({
             patterns: [
                 {
-                from: 'src/html/index.html',
-                to: 'index.html'
+                    from: "src/html/index.html",
+                    to: "index.html",
                 },
                 {
-                from: 'src/html/debug.html',
-                to: 'debug.html'
-                }
-            ]
-        })
+                    from: "src/html/debug.html",
+                    to: "debug.html",
+                },
+            ],
+        }),
     ],
 };
 

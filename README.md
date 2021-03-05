@@ -1,5 +1,7 @@
 # Usage 
 
+## English Version
+
     <script src="https://pathologist-leonard-26086.netlify.app/tocm.js" charset="UTF-8"></script>
     <script type="text/javascript">
     window._tocMakerParam = {
@@ -14,6 +16,23 @@
     };
     </script>
 
+
+## Japanese Version
+
+    <script src="https://pathologist-leonard-26086.netlify.app/tocm.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+    window._tocMakerParam = {
+      baseNode: "body",
+      startLevel: 1,
+      id: "#toc2",
+      title: true,
+      titleLabel: "目次",
+      toggle: true,
+      toggleOpen: true,
+      toggleLabelOpen: "[開く]",
+      toggleLabelClose: "[閉じる]"
+    };
+    </script>
 
 # Option
 
@@ -45,4 +64,4 @@
 
 and access to [http://localhost:8080/debug.html](http://localhost:8080/debug.html)
 
-
+# 
