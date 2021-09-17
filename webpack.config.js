@@ -12,9 +12,10 @@ const config = {
         filename: "tocm.js",
     },
     devServer: {
-        contentBase: "dist",
+        static: {
+            directory: path.join(__dirname, 'dist'),
+        },
         port: 8080,
-        inline: true,
     },
     module: {
         rules: [
